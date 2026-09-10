@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# QGIS
+*.qgs~
+*.qgz~
+.qgis2/
+
+# Compilaciones y empaquetado del complemento
+build/
+dist/
+*.zip
+
+# Salidas de prueba: informes, cuadros y capas generadas
+*.gpkg
+*.gpkg-shm
+*.gpkg-wal
+informe*.html
+informe*.docx
+cuadros*.xlsx
+forest_planner_*.html
+forest_planner_*.docx
+forest_planner_*.xlsx
+
+# Editores
+.vscode/
+.idea/
+*.swp
+.DS_Store

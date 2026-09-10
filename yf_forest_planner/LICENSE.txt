@@ -1,0 +1,44 @@
+Forest Planner - Complemento de QGIS para planificacion forestal
+Copyright (C) 2026 Yuri Fabian Caller Cordova
+
+Este programa es software libre: puede redistribuirlo y modificarlo bajo los
+terminos de la Licencia Publica General de GNU publicada por la Free Software
+Foundation, en su version 2 o, a su eleccion, cualquier version posterior.
+
+Este programa se distribuye con la esperanza de que sea util, pero SIN
+NINGUNA GARANTIA; ni siquiera la garantia implicita de COMERCIABILIDAD o
+IDONEIDAD PARA UN PROPOSITO PARTICULAR. Consulte la Licencia Publica General
+de GNU para mas detalles.
+
+El texto completo de la licencia se encuentra en el archivo LICENSE del
+repositorio:
+
+    https://github.com/YuriCaller/yf_forest_planner/blob/main/LICENSE
+
+y en:
+
+    https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+
+ADVERTENCIA SOBRE EL USO
+------------------------
+Los trazos, ubicaciones y cantidades que produce este complemento son
+PROPUESTAS TECNICAS obtenidas por modelamiento a partir de un modelo digital
+de elevacion y del censo forestal. Estan sujetas a verificacion y replanteo en
+campo y NO constituyen un diseno definitivo.
+
+La responsabilidad tecnica del plan de manejo recae en el profesional que lo
+suscribe. Este complemento es una herramienta de apoyo a la formulacion y no
+reemplaza el criterio profesional, la verificacion de campo ni el cumplimiento
+de la normativa vigente en cada jurisdiccion.
+
+
+CREDITOS
+--------
+Iconos de diagnostico, informacion y ayuda: elaborados para este complemento.
+Icono principal: elaborado para este complemento.
+
+Referencias de calibracion citadas en el codigo y el manual:
+  Silva et al. (2018), Acta Amazonica 48: 18-27
+  Braz (1997), Embrapa Acre
+  Johns, Barreto y Uhl (1996), Paragominas

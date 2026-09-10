@@ -1,0 +1,61 @@
+[general]
+name=Forest Planner
+qgisMinimumVersion=3.34
+supportsQt6=True
+qgisMaximumVersion=4.99
+description=From forest census to management plan: drainage network, riparian buffers, log landings, skid trails, haul roads and impact areas for Amazonian forest management.
+version=0.1.0
+author=Yuri Fabian Caller Cordova
+email=contacto@gis-amazonia.pe
+
+about=Forest Planner automates the analysis chain behind an Amazonian forest management plan. From a digital elevation model and the forest census layer, it derives the drainage network and riparian buffers by Strahler order, estimates wetlands and flood-prone ground through HAND, locates log landings and log yards under volume, skidding distance and slope constraints, builds a traversability cost surface and lays out the haul road network, then consolidates impact areas, harvest intensity and transport trips.
+    .
+    DEL CENSO FORESTAL AL PLAN DE MANEJO. Automatiza la cadena de analisis que sostiene un plan de manejo forestal amazonico: red hidrica y fajas marginales por orden de Strahler, aguajales y zonas inundables mediante HAND, patios y centros de acopio con restricciones de volumen y arrastre, superficie de costo y red de vias, areas de impacto, intensidad de aprovechamiento y viajes de transporte.
+    .
+    CALIBRACION VERIFICABLE: los parametros por defecto no son supuestos. El umbral de cauce reproduce el 86.8% de una quebrada levantada en campo; el arrastre medio da 162 m frente a los 160 m de Braz (1997); el area de patios da 18.7 m2/ha frente a los 24 de Johns et al. (1996); y la densidad vial da 15.0 m/ha frente a los 13.2 y 15.3 medidos en dos parcelas de corta reales de Madre de Dios, una de las cuales NO se uso para calibrar.
+    .
+    HONESTIDAD DE LOS RESULTADOS: los trazos son propuestas sujetas a replanteo en campo y el informe lo declara. Las distancias de arrastre se declaran como euclidianas. El area basal removida y la abundancia por especie se reportan como NO CONCLUYENTES cuando el insumo es un censo comercial, porque ese dato no puede sustentarlas. Los diametros minimos de corta se presentan como el minimo legal y no como el sostenible. Cada insumo se acredita en el informe con su SHA-256, y las capas en memoria se declaran como no verificables en lugar de inventarles un identificador.
+    .
+    ALCANCE REGIONAL: incluye limites normativos de Peru, Brasil, Bolivia y Ecuador, cada uno con la norma que lo sustenta. Los diametros minimos de corta del Peru provienen de la RJ 458-2002-INRENA.
+    .
+    SIN DEPENDENCIAS OBLIGATORIAS: solo requiere numpy y scipy, incluidos en QGIS, y el proveedor GRASS para la hidrologia. El complemento verifica el entorno y senala lo que falte.
+    .
+    MANUAL COMPLETO: https://github.com/YuriCaller/yf_forest_planner/blob/main/docs
+    .
+    Desarrollado en Puerto Maldonado, Madre de Dios, sobre censos reales de concesiones forestales de la Amazonia peruana.
+
+tracker=https://github.com/YuriCaller/yf_forest_planner/issues
+repository=https://github.com/YuriCaller/yf_forest_planner
+homepage=https://github.com/YuriCaller/yf_forest_planner
+
+category=Plugins
+icon=resources/icons/forest_planner.png
+experimental=True
+deprecated=False
+hasProcessingProvider=no
+server=False
+
+tags=forestry,forest management,forest planning,harvest planning,logging,timber,silviculture,skidding,skid trail,log landing,haul road,road network,least cost path,forest road design,hydrology,watershed,drainage network,strahler,riparian buffer,DEM,terrain,slope,HAND,wetland,amazon,amazonia,tropical forest,forestal,manejo forestal,plan de manejo,censo forestal,POA,PGMF,concesion forestal,patios de acopio,fajas marginales,red hidrica,arrastre,vias de saca,aguajal,SERFOR,Peru,Brasil,Bolivia,Ecuador
+
+changelog=0.1.0 (experimental)
+    Compatible con QGIS 3.34 y con QGIS 4 sobre Qt6: los enumerados de Qt se
+    resuelven por atributo, de modo que el mismo codigo funciona en ambas ramas.
+    Primera version publica. Cadena completa de ocho modulos, del censo al plan.
+    .
+    * Red hidrica con ordenes de Strahler y Shreve calculados en el complemento,
+      sin depender del addon r.stream.order de GRASS. Fajas marginales por clase,
+      mutuamente excluyentes para que la suma de areas sea la real.
+    * Patios y centros de acopio como problema de localizacion con capacidad,
+      con fusion de patios marginales y comparacion de escenarios de centros.
+    * Trazado de vias sobre grafo dirigido: distingue la pendiente transversal
+      del terreno, que determina el movimiento de tierras, de la rasante
+      longitudinal de la via, que limita si el camion sube cargado. Admite
+      limites distintos para subir y bajar cargado.
+    * Verificacion de diametro minimo de corta por especie, con la tabla oficial
+      peruana cargable y exportable en CSV.
+    * Densidad e intensidad de aprovechamiento sobre malla de una hectarea,
+      contrastadas contra el limite normativo: un predio cuya media cumple puede
+      concentrar el aprovechamiento en pocas hectareas.
+    * Informe en HTML y Word y cuadros en Excel, generados sin dependencias
+      externas.
+    * Ayuda contextual: cada pestana enlaza a su seccion del manual.
