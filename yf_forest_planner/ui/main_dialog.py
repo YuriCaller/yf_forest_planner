@@ -857,6 +857,9 @@ class MainDialog(QDialog):
             self.cmb_vias_exist.setAllowEmptyLayer(True)
             self.cmb_vias_exist.setLayer(None)
         except AttributeError:
+            # setAllowEmptyLayer no existe en versiones antiguas de QGIS. Sin
+            # el, el combo arranca con la primera capa de lineas seleccionada
+            # en lugar de vacio, que es una molestia menor y no un fallo.
             pass
         f2.addRow("Vias existentes:", self.cmb_vias_exist)
 

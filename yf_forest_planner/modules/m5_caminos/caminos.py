@@ -331,6 +331,9 @@ def _avanzar(feedback, indice: int, total: int, result) -> bool:
             return False
         feedback.setProgress(int(100 * indice / max(1, total)))
     except AttributeError:
+        # El objeto recibido no implementa la interfaz de feedback de
+        # Processing. Se deja de informar el avance y el trazado continua: la
+        # barra de progreso no forma parte del resultado.
         pass
     return True
 

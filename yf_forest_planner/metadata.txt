@@ -1,3 +1,8 @@
+# AVISO: QGIS lee este archivo con configparser, que interpreta el simbolo de
+# porcentaje como marcador de interpolacion. Todo porcentaje literal debe
+# escribirse duplicado (86.8%% se muestra como 86.8%); si no, la instalacion
+# falla con un error de analisis y el complemento no se puede cargar.
+
 [general]
 name=Forest Planner
 qgisMinimumVersion=3.34
@@ -12,7 +17,7 @@ about=Forest Planner automates the analysis chain behind an Amazonian forest man
     .
     DEL CENSO FORESTAL AL PLAN DE MANEJO. Automatiza la cadena de analisis que sostiene un plan de manejo forestal amazonico: red hidrica y fajas marginales por orden de Strahler, aguajales y zonas inundables mediante HAND, patios y centros de acopio con restricciones de volumen y arrastre, superficie de costo y red de vias, areas de impacto, intensidad de aprovechamiento y viajes de transporte.
     .
-    CALIBRACION VERIFICABLE: los parametros por defecto no son supuestos. El umbral de cauce reproduce el 86.8% de una quebrada levantada en campo; el arrastre medio da 162 m frente a los 160 m de Braz (1997); el area de patios da 18.7 m2/ha frente a los 24 de Johns et al. (1996); y la densidad vial da 15.0 m/ha frente a los 13.2 y 15.3 medidos en dos parcelas de corta reales de Madre de Dios, una de las cuales NO se uso para calibrar.
+    CALIBRACION VERIFICABLE: los parametros por defecto no son supuestos. El umbral de cauce reproduce el 86.8%% de una quebrada levantada en campo; el arrastre medio da 162 m frente a los 160 m de Braz (1997); el area de patios da 18.7 m2/ha frente a los 24 de Johns et al. (1996); y la densidad vial da 15.0 m/ha frente a los 13.2 y 15.3 medidos en dos parcelas de corta reales de Madre de Dios, una de las cuales NO se uso para calibrar.
     .
     HONESTIDAD DE LOS RESULTADOS: los trazos son propuestas sujetas a replanteo en campo y el informe lo declara. Las distancias de arrastre se declaran como euclidianas. El area basal removida y la abundancia por especie se reportan como NO CONCLUYENTES cuando el insumo es un censo comercial, porque ese dato no puede sustentarlas. Los diametros minimos de corta se presentan como el minimo legal y no como el sostenible. Cada insumo se acredita en el informe con su SHA-256, y las capas en memoria se declaran como no verificables en lugar de inventarles un identificador.
     .
